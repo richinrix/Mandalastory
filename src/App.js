@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Fragment, useEffect, useState } from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+// comps
+import Auth from "./components/Auth";
+import Profile from "./components/Profile";
+import Gallery from "./components/Gallery";
+import Login from "./components/Login";
 
+// import AOS from "aos";
 function App() {
+  const [authenticated, setAuthenticated] = useState(false);
+  const checkAuth = () => {
+    if (authenticated) return <Redirect to="/" />;
+    else return <Redirect to="/login" />;
+  };
+  const toggleAuth = () => {
+    setAuthenticated(!authenticated);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      {checkAuth()}
+      <div className="App ">
+        <Auth toggleAuth={toggleAuth} auth={authenticated} />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            component={Homepage}
+            toggleAuth={toggleAuth}
+            auth={authenticated}
+          />
+          <Route
+            exact
+            path="/login"
+            component={() => (
+              <Login LoginPage toggleAuth={toggleAuth} auth={authenticated} />
+            )}
+            toggleAuth={toggleAuth}
+            auth={authenticated}
+          />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
+
+// const LoginPage = () => <Login toggleAuth={toggleAuth} auth={authenticated} />;
+
+const Homepage = () => (
+  <Fragment>
+    <Profile></Profile>
+    <div className="flex justify-center">
+      <Gallery />
+    </div>
+  </Fragment>
+);
 
 export default App;

@@ -1,38 +1,161 @@
 .App {
+  background-color: #ece5da;
+}
+.imageOverlay {
+  visibility: hidden;
+}
+.imageContainer:hover .imageOverlay {
+  visibility: visible;
+}
+.imageContainer {
+  /* border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; */
+
+  overflow: hidden;
+  /* border: 3px solid black;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0; */
+
+  padding: 0 0 30px 0;
+  /* background-color: black; */
+}
+
+.imageOverlay {
+  z-index: 10000;
+  background: #a031c236;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.mandalaText {
+  /* font-family: "Paytone One"; */
+  font-family: "Courier New", Courier, monospace;
+
+  color: #202020;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 11px 0 17px 0;
+  font-size: 110px;
+  /* color: #f1ebe5; */
+  text-shadow: 0 13.36px 8.896px #c4b59d, 0 -2px 1px #fff;
+}
+.mandalaText div {
+  border-top: 2px solid black;
+}
+.artImage {
+  width: 350px;
+  box-shadow: 25px 25px 50px #c9c3b9, -25px -25px 50px #fffffb;
+  /* z-index: 100000; */
+}
+.glass {
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0);
+  /* background: #2020204f; */
+
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  /* border-radius: 10px; */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.glass-card {
+  background-color: #bebebe69;
+}
+/* profile pic */
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+
+.badge {
+  display: block;
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  cursor: pointer;
+  background: url(https://4.bp.blogspot.com/-AaODPkq5mFc/XxcNFrnwxZI/AAAAAAAAAP4/BkQvR-j4CRIq27OiOST55HTgLtdrTY2KgCNcBGAsYHQ/w914-h514-p-k-no-nu/batman-art-dc-superhero-uhdpaper.com-4K-6.1960-wp.thumbnail.jpg)
+    no-repeat 100% 50%;
+  background-size: 120%;
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.75);
+}
+.badge:hover {
+  box-shadow: 0px 0.5rem 2rem rgba(0, 0, 0, 0.75);
+  background-position: 0% 50%;
+}
+.badge:hover .text {
+  transform: rotate(-45deg) translate(0px) rotate(-315deg);
+  background: rgba(102, 51, 153, 0.5);
+  width: 20rem;
+  letter-spacing: 1rem;
+  line-height: 20rem;
+  height: 20rem;
+  margin-top: -10rem;
+  margin-left: -10rem;
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    letter-spacing 1.5s ease-out;
+}
+.badge .text {
+  display: block;
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  line-height: 10rem;
+  left: 50%;
+  top: 50%;
+  margin-top: -5rem;
+  margin-left: -5rem;
+  font-size: 2rem;
+  font-family: Raleway, sans-serif;
   text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  background: #df1ace;
+  transform: rotate(-180deg) translate(-10rem) rotate(180deg);
+  box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.formContainer {
+  background: #7272722d;
+}
+.formContainer input {
+  background-color: #ffffff00;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 15px 0 15px 30px;
+  padding: 10px 0;
+  outline: none;
+}
+.formContainer button {
+  border: 2px solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.signout-btn {
+  border: 2px solid black;
+}
+.loginScreen {
+  background: linear-gradient(
+    -45deg,
+    #f1c9d2,
+    #ffffff07,
+    #f1c9d2,
+    #ffffff07,
+    #f1c9d2,
+    #ffffff07
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  50% {
+    background-position: 100% 50%;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    background-position: 0% 50%;
   }
 }
