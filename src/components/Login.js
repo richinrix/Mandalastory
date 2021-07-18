@@ -4,7 +4,7 @@ import Art1 from "../assets/art/mandala1.png";
 import Art2 from "../assets/art/mandala2.png";
 
 export default function Login(props) {
-  const userinfo = { username: "poly", password: "poly" };
+  const userinfo = { username: "haripriya", password: "art@haripriya" };
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 

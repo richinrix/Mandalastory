@@ -15,7 +15,7 @@ export default function Subscribe(props) {
       setWrongMail(false);
       toggleSubscribed();
       setSubmitStat(true);
-      toggleS();
+      setTimeout(() => toggleS(), 400);
     } else {
       setWrongMail(true);
     }
