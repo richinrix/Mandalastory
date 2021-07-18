@@ -1,9 +1,9 @@
 import "./App.css";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // comps
 import Auth from "./components/Auth";
-import Profile from "./components/Profile";
+// import Profile from "./components/Profile";
 import Gallery from "./components/Gallery";
 import Login from "./components/Login";
 
@@ -49,10 +49,13 @@ function App() {
 
 const Homepage = () => (
   <Fragment>
-    <Profile></Profile>
+    {/* <Profile/> */}
     <div className="flex justify-center">
       <Gallery />
     </div>
+    <footer className="text-right mr-2 font-mono">
+      All Images Are Subject To Copyright &copy; 2021{" "}
+    </footer>
   </Fragment>
 );
 

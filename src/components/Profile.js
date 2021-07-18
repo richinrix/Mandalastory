@@ -19,7 +19,7 @@ export default function Profile() {
           <div className="  h-10 my-5 w-min px-5 py-1 flex items-center text-2xl text-brand-dark  font-semibold  rounded ring-pink-600 ring-2">
             <div>Haripriya</div>
           </div>
-          <div className="text-lighter">
+          <div className="text-lighter mt-12">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Reprehenderit similique voluptatum accusantium eligendi, accusamus
             ad.
