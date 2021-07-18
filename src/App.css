@@ -61,9 +61,18 @@ body::-webkit-scrollbar-thumb {
   border-top: 2px solid black;
 }
 .artImage {
-  width: 350px;
+  width: 300px;
   box-shadow: 25px 25px 50px #c9c3b9, -25px -25px 50px #fffffb;
   /* z-index: 100000; */
+}
+@media (max-width: 1300px) {
+  .mandalaText div {
+    font-size: 90px;
+  }
+  .artImage {
+    width: 250px;
+    height: 300px;
+  }
 }
 @media (max-width: 767px) {
   .mandalaText div {
