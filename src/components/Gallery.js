@@ -5,7 +5,7 @@ import Subscribe from "@material-ui/icons/Mail";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 // images
 import Art1 from "../assets/art/mandala3.png";
-import Art2 from "../assets/art/mandala4.png";
+// import Art2 from "../assets/art/mandala5.png";
 // other comps
 import Subscribesubscribed from "./Subscribe";
 
@@ -97,7 +97,7 @@ export default function Gallery() {
         >
           <InstaIcon fontSize="large" color="secondary" />
 
-          <div className="mx-3  text-pink-500 ">Visit My Instagram.</div>
+          <div className="mx-3  text-pink-500 ">Visit My Instagram</div>
         </a>
       </div>
       <div
@@ -108,7 +108,7 @@ export default function Gallery() {
           {!subscribed ? (
             <>
               <Subscribe fontSize="large" className="text-red-500" />
-              <div className="mx-3  text-red-500 ">Subscribe For Updates.</div>
+              <div className="mx-3  text-red-500 ">Subscribe For Updates</div>
             </>
           ) : (
             <>

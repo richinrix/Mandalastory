@@ -41,7 +41,7 @@ export default function Subscribe(props) {
           />
           {!submitStat ? (
             <button
-              className="bg-brand-dark text-brand-pink1 p-2 rounded my-3"
+              className="bg-brand-dark ring-2 ring-brand-dark hover:bg-brand-pink1 text-brand-pink1 hover:text-brand-dark p-2 rounded my-3"
               onClick={submitHandler}
             >
               Submit

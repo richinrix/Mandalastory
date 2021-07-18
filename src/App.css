@@ -218,9 +218,9 @@ body::-webkit-scrollbar-thumb {
   top: 50px;
 }
 .gallery-art2 {
-  width: 500px;
-  right: -50px;
-  top: 300px;
+  width: 250px;
+  right: 300px;
+  bottom: 20px;
 }
 @keyframes spinning {
   from {
