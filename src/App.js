@@ -1,45 +1,52 @@
 import "./App.css";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // comps
 import Auth from "./components/Auth";
 // import Profile from "./components/Profile";
 import Gallery from "./components/Gallery";
 import Login from "./components/Login";
+import Admin from "./components/Admin";
 
 // import AOS from "aos";
 function App() {
-  const [authenticated, setAuthenticated] = useState(false);
-  const checkAuth = () => {
-    if (authenticated) return <Redirect to="/" />;
-    else return <Redirect to="/login" />;
-  };
+  const [redirect, setRedirect] = useState(localStorage.getItem("auth"));
+  const checkAuth = () => {};
+
+  useEffect(() => {
+    localStorage.setItem("auth", false);
+    checkAuth();
+  }, []);
+  const [authenticated, setAuthenticated] = useState(
+    localStorage.getItem("auth")
+  );
+
   const toggleAuth = () => {
     setAuthenticated(!authenticated);
   };
   return (
     <BrowserRouter>
-      {checkAuth()}
+      {/* {checkAuth()} */}
       <div className="App ">
         <Auth toggleAuth={toggleAuth} auth={authenticated} />
         <Switch>
-          <Route
-            exact
-            path="/"
-            component={Homepage}
-            toggleAuth={toggleAuth}
-            auth={authenticated}
-          />
+          <Route exact path="/" component={Homepage} />
           <Route
             exact
             path="/login"
             component={() => (
               <Login LoginPage toggleAuth={toggleAuth} auth={authenticated} />
             )}
-            toggleAuth={toggleAuth}
-            auth={authenticated}
+          />
+          <Route
+            exact
+            path="/admin"
+            component={() => (
+              <Admin LoginPage toggleAuth={toggleAuth} auth={authenticated} />
+            )}
           />
         </Switch>
+        {redirect && <Redirect to="/login" />}
       </div>
     </BrowserRouter>
   );

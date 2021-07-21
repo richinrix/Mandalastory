@@ -177,7 +177,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .signout-btn {
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 .loginScreen {
   background: linear-gradient(

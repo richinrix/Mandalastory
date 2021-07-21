@@ -70,7 +70,7 @@ export default function Gallery() {
       )}
       <img className=" fixed gallery-art1" src={Art1} alt="" />
       {/* <img className=" fixed gallery-art2" src={Art2} alt="" /> */}
-      <div className="mandalaText h-64   px-5  flex mx-auto items-center justify-center  text-brand-dark  font-semibold   ">
+      <div className="mandalaText  h-72   px-5  flex mx-auto items-center justify-center  text-brand-dark  font-semibold   ">
         <ParallaxProvider>
           <Parallax y={[-20, 20]}>M</Parallax>
           <Parallax y={[20, 20]}>Y</Parallax>
